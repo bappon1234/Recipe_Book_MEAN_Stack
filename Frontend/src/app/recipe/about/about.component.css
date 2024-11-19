@@ -1,0 +1,64 @@
+/* About Container - General Styling */
+.about-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    text-align: left;
+    background-color: rgb(56, 142, 125);
+    border-radius: 8px;
+}
+
+/* About Image Styling */
+.about-container img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-left: 20%;
+}
+
+/* About Content Styling */
+.about-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-container h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.8rem;
+    color: rgb(0, 0, 0);
+}
+
+.about-container p {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Mobile View Styling */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack image and text vertically */
+        padding: 15px;
+        text-align: center;
+    }
+
+    .about-container img {
+        width: 150px; /* Smaller image for mobile */
+        margin: 0 auto 10px; /* Center image with margin below */
+    }
+
+    .about-container h2 {
+        font-size: 1.6rem; /* Slightly smaller heading for mobile */
+    }
+
+    .about-container p {
+        font-size: 1rem; /* Adjust font size for readability */
+    }
+}

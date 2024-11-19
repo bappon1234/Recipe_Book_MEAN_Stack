@@ -1,0 +1,180 @@
+<!-- <div class="recipe-update-container">
+    <h2>Update Recipe</h2>
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input id="name" formControlName="name" type="text" />
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="ingredients">Ingredients:</label>
+        <textarea id="ingredients" formControlName="ingredients"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="instructions">Instructions:</label>
+        <textarea id="instructions" formControlName="instructions"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="tags">Tags:</label>
+        <input id="tags" formControlName="tags" type="text" />
+      </div>
+  
+      <div class="form-group">
+        <label for="categories">Categories:</label>
+        <input id="categories" formControlName="categories" type="text" />
+      </div>
+  
+      <div class="form-group">
+        <label for="cookingTime">Cooking Time (minutes):</label>
+        <input id="cookingTime" formControlName="cookingTime" type="number" />
+      </div>
+  
+      <div class="form-group">
+        <label for="servings">Servings:</label>
+        <input id="servings" formControlName="servings" type="number" />
+      </div>
+  
+      <div class="form-group">
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty" formControlName="difficulty">
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="rating">Rating:</label>
+        <input id="rating" formControlName="rating" type="number" min="1" max="5" />
+      </div>
+  
+      <div class="form-group">
+        <label for="image">Image URL:</label>
+        <input id="image" formControlName="image" type="text" />
+      </div>
+  
+      <div class="form-group">
+        <label for="createdBy">Created By:</label>
+        <input id="createdBy" formControlName="createdBy" type="text" />
+      </div>
+  
+      <button type="submit" [disabled]="recipeForm.invalid">Update Recipe</button>
+    </form>
+  </div>
+   -->
+
+   <div class="container">
+    <h2>Update Recipe</h2>
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" type="text" class="form-control" />
+        <div *ngIf="recipeForm.get('name')?.invalid && recipeForm.get('name')?.touched" class="text-danger">
+          Name is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" class="form-control"></textarea>
+        <div *ngIf="recipeForm.get('description')?.invalid && recipeForm.get('description')?.touched" class="text-danger">
+          Description is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="ingredients">Ingredients</label>
+        <textarea id="ingredients" formControlName="ingredients" class="form-control"></textarea>
+        <div *ngIf="recipeForm.get('ingredients')?.invalid && recipeForm.get('ingredients')?.touched" class="text-danger">
+          Ingredients are required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="instructions">Instructions</label>
+        <textarea id="instructions" formControlName="instructions" class="form-control"></textarea>
+        <div *ngIf="recipeForm.get('instructions')?.invalid && recipeForm.get('instructions')?.touched" class="text-danger">
+          Instructions are required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="tags">Tags</label>
+        <input id="tags" formControlName="tags" type="text" class="form-control" />
+        <div *ngIf="recipeForm.get('tags')?.invalid && recipeForm.get('tags')?.touched" class="text-danger">
+          Tags are required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="categories">Categories</label>
+        <input id="categories" formControlName="categories" type="text" class="form-control" />
+        <div *ngIf="recipeForm.get('categories')?.invalid && recipeForm.get('categories')?.touched" class="text-danger">
+          Categories are required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="cookingTime">Cooking Time (minutes)</label>
+        <input id="cookingTime" formControlName="cookingTime" type="number" class="form-control" />
+        <div *ngIf="recipeForm.get('cookingTime')?.invalid && recipeForm.get('cookingTime')?.touched" class="text-danger">
+          Cooking Time is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="servings">Servings</label>
+        <input id="servings" formControlName="servings" type="number" class="form-control" />
+        <div *ngIf="recipeForm.get('servings')?.invalid && recipeForm.get('servings')?.touched" class="text-danger">
+          Servings are required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty" formControlName="difficulty" class="form-control">
+          <option value="" disabled>Select difficulty</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+        <div *ngIf="recipeForm.get('difficulty')?.invalid && recipeForm.get('difficulty')?.touched" class="text-danger">
+          Difficulty is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="rating">Rating (1-5)</label>
+        <input id="rating" formControlName="rating" type="number" class="form-control" min="1" max="5" />
+        <div *ngIf="recipeForm.get('rating')?.invalid && recipeForm.get('rating')?.touched" class="text-danger">
+          Rating must be between 1 and 5.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="image">Image URL</label>
+        <input id="image" formControlName="image" type="text" class="form-control" />
+        <div *ngIf="recipeForm.get('image')?.invalid && recipeForm.get('image')?.touched" class="text-danger">
+          Image URL is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="createdBy">Created By</label>
+        <input id="createdBy" formControlName="createdBy" type="text" class="form-control" />
+        <div *ngIf="recipeForm.get('createdBy')?.invalid && recipeForm.get('createdBy')?.touched" class="text-danger">
+          Created By is required.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="recipeForm.invalid">Update Recipe</button>
+    </form>
+  </div>
+  

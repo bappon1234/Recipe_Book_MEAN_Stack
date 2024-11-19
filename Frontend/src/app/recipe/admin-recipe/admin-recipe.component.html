@@ -1,0 +1,78 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<div *ngIf="error; else recipeList">
+    <p class="error">{{ error }}</p>
+  </div>
+  <ng-template #recipeList>
+    <header>
+      <div class="header-container">
+        <h1>Recipe Book</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="search recipes..." [(ngModel)]="searchTerm" (input)="onSearch()"/>
+        </div>
+      </div>
+    </header>
+  
+    <h2>All Recipes</h2>
+    <ul>
+      <li *ngFor="let recipe of filteredRecipes" class="recipe-card">  
+        <img [src]="recipe.image" alt="{{ recipe.name }}" class="recipe-image">   
+        <div class="recipe-details">                       
+        <h3>Name : {{ recipe.name }}</h3>
+        <button (click)="recipe.showDetails = !recipe.showDetails">
+          {{ recipe.showDetails ? 'Hide Details' : 'View Details' }}
+        </button>
+        <button class="update-btn" (click)="onUpdateRecipe(recipe._id)">Update Recipe</button>
+        <button class="delete-btn" (click)="onDeleteRecipe(recipe._id)">Delele Recipe</button>
+        <div *ngIf="recipe.showDetails">
+        <p><strong>Description : </strong>{{ recipe.description }}</p>
+        <p><strong>ingredients : </strong>{{ recipe.ingredients }}</p>
+        <p><strong>instructions : </strong>{{ recipe.instructions }}</p>
+        <p><strong>tags : </strong>{{ recipe.tags }}</p>
+        <p><strong>categories : </strong>{{ recipe.categories }}</p>
+        <p><strong>cookingTime : </strong>{{ recipe.cookingTime }}</p>
+        <p><strong>servings : </strong>{{ recipe.servings }}</p>
+        <p><strong>difficulty : </strong>{{ recipe.difficulty }}</p>
+        <p><strong>rating : </strong>{{ recipe.rating }}</p>
+        <p><strong>createdBy : </strong>{{ recipe.createdBy }}</p>
+        </div>
+        </div>
+      </li>
+    </ul>
+  </ng-template>
+
+  
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="/assets/image/menu book.jpg" alt="Recipe Book" />
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="/recipe/about">About Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="/recipe/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+      <div class="footer-newsletter">
+        <form>
+          <input type="email" placeholder="Subscribe to our Recipe Book" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Recipe Book. All Rights Reserved.</p>
+      <p><span>coded by : </span>Bappon</p>
+    </div>
+  </footer>
+  

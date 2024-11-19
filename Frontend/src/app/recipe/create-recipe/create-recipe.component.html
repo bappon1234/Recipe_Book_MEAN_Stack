@@ -1,0 +1,71 @@
+<div class="form-container">
+    <h2>Create Recipe</h2>
+    <form (ngSubmit)="recipeCreate()">
+        <div class="form-group">
+            <label for="name">Recipe Name</label>
+            <input type="text" [(ngModel)]="data.name" name="name" id="name" placeholder="Enter recipe name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea [(ngModel)]="data.description" name="description" id="description" rows="4" placeholder="Enter recipe description" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="ingredients">Ingredients (Comma separated)</label>
+            <textarea [(ngModel)]="data.ingredients" name="ingredients" id="ingredients" rows="3" placeholder="E.g., sugar, flour, eggs" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="instructions">Instructions (Comma separated)</label>
+            <textarea [(ngModel)]="data.instructions" name="instructions" id="instructions" rows="3" placeholder="E.g., Preheat oven, Mix ingredients, Bake" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="tags">Tags (Optional)</label>
+            <input type="text" [(ngModel)]="data.tags" name="tags" id="tags" placeholder="E.g., Vegan, Quick, Dessert">
+        </div>
+
+        <div class="form-group">
+            <label for="categories">Categories (Optional)</label>
+            <input type="text" [(ngModel)]="data.categories" name="categories" id="categories" placeholder="E.g., Breakfast, Lunch, Dinner">
+        </div>
+
+        <div class="form-group">
+            <label for="cookingTime">Cooking Time (in minutes)</label>
+            <input type="number" [(ngModel)]="data.cookingTime" name="cookingTime" id="cookingTime" min="1" placeholder="Enter cooking time" required>
+        </div>
+
+        <div class="form-group">
+            <label for="servings">Servings</label>
+            <input type="number" [(ngModel)]="data.servings" name="servings" id="servings" min="1" placeholder="Enter number of servings" required>
+        </div>
+
+        <div class="form-group">
+            <label for="difficulty">Difficulty Level</label>
+            <select [(ngModel)]="data.difficulty" name="difficulty" id="difficulty" required>
+                <option value="">Select Difficulty</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="number" [(ngModel)]="data.rating" name="rating" id="rating" min="1" max="5" placeholder="Enter rating" required>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Recipe Image</label>
+            <input type="file" (change)="onImageSelected($event)" name="image" id="image" required>
+        </div>
+
+        <div class="form-group">
+            <label for="createdBy">Created By</label>
+            <input type="text" [(ngModel)]="data.createdBy" name="createdBy" id="createdBy" placeholder="Your Name" required>
+        </div>
+
+        <button type="submit">Submit Recipe</button>
+    </form>
+</div>

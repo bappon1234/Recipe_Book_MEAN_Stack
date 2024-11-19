@@ -1,0 +1,268 @@
+/* General styling for the container */
+h2{
+  text-align: center;
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  color: rgb(217, 158, 18);
+}
+
+header {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Header Container */
+.header-container {
+  background: linear-gradient(90deg, rgba(18, 194, 233, 1) 0%, rgba(196, 113, 237, 1) 50%, rgba(255, 113, 206, 1) 100%);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title in Header */
+.header-container h1 {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 36px;
+  color: white;
+  margin: 0 0 15px 0;
+}
+
+/* Search Bar Styling */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 40%;
+  max-width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+.search-bar input:focus {
+  border-color: #3a86ff;
+  box-shadow: 0 0 5px rgba(58, 134, 255, 0.5);
+  outline: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.recipe-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 15px;
+  width: 250px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Styling the recipe image */
+.recipe-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Styling for recipe details */
+.recipe-details {
+  padding: 10px 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Recipe heading */
+.recipe-details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ea0c35;
+  margin-bottom: 10px;
+}
+
+/* Styling for text paragraphs */
+.recipe-details p {
+  margin: 5px 0;
+  line-height: 1.6;
+}
+.recipe-details p strong {
+  font-weight: bold;
+  color: #3a1ac7;
+}
+
+button{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #050505;
+  background-color: rgb(16, 226, 118);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.25s ease;
+}
+
+button :hover{
+  background-color: blueviolet;
+  transform: scale(1.05);
+}
+button:active {
+  background-color: #003d80;
+  transform: scale(1);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(228, 19, 110, 0.5);
+}
+
+/* For the error message */
+.error {
+  color: #e74c3c;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+}
+
+/* Styling the container for error and recipe list */
+ng-template {
+  display: block;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .recipe-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  height: 15vh;
+  margin: 0 auto;
+  padding: 20px;
+  flex-wrap: wrap; /* Allows wrapping of content */
+}
+
+.footer-logo img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.footer-links ul {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-social a {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 30px; /* Adjust icon size */
+  color: white;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #ff6600; /* Add hover effect */
+}
+
+.footer-newsletter form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-newsletter input {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.footer-newsletter button {
+  padding: 10px;
+  background-color: #ff6600;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+}
+footer p span{
+  color: #09f6da;
+}
+footer p{
+  color: #e67300;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links, .footer-social {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .footer-newsletter input {
+    width: 100%;
+  }
+}
+
+.footer-links li {
+  display: block; /* Ensures each list item is on its own line */
+  margin-bottom: 10px;
+}

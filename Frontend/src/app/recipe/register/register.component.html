@@ -1,0 +1,41 @@
+<div class="register-container">
+    <h2>Register</h2>
+    <form (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="data.name" name="name" id="name" placeholder="Enter your name" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="data.email" name="email" id="email" placeholder="Enter your email" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="data.password" name="password" id="password" placeholder="Enter your password" required>
+      </div>
+  
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="terms" name="terms" required>
+          I agree to the <a href="#" target="_blank">Terms and Conditions</a>
+        </label>
+      </div>
+      <p>Already have a registerd? <a href="/recipe/login">Login</a></p>
+
+      <div>
+        <label>
+          <input type="radio" [(ngModel)]="data.role" name="role" value="user" checked>
+          User
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="data.role" name="role" value="admin" checked>
+          Admin
+        </label>
+      </div>
+  
+      <button type="submit" class="register-button">Register</button>
+    </form>
+  </div>
+  

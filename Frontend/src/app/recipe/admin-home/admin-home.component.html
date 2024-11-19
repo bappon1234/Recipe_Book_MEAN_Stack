@@ -1,0 +1,20 @@
+<header>
+    <h2>Recipe Book</h2>
+    <nav class="nav-links" [class.active]="menuOpen">
+        <div class="menu-icon" (click)="toggleMenu()">
+            &#9776;
+        </div>
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="/recipe/recipe-update/:id">Update Recipe</a></li>
+        <li><a href="/recipe/create-recipe">Create Recipe</a></li>
+        <li><a href="/recipe/admin-recipe">View Recipe</a></li>
+        <li><a href="/recipe/login">Login</a></li>
+
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Welcome<br>to Recipe<br>Book</h1>
+  </main>
+  
